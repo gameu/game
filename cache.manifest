@@ -1,0 +1,20 @@
+CACHE MANIFEST
+#version : 0.0.0
+
+CACHE:
+./css/main.css
+./css/fontello.eot
+./css/fontello.svg
+./css/fontello.woff
+./css/fontello.ttf
+./js/toggle.js
+demo.html
+
+NETWORK:
+*
+
+FALLBACK:
+/pocket/pocket/ demo.html
+/pocket/pocket/appd/take_out demo.html
+
+
