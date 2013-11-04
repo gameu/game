@@ -15,10 +15,15 @@ class StageController extends NController{
         
         
         public function actionIndex(){
-            
+            echo "index";
         }
-        
-        
+        public function game(){
+            echo "game";
+        }
+
+
+
+
 //	public function actionGame(){
 //		$this->render('game');
 //	}

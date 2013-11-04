@@ -15,6 +15,7 @@ class NController extends Controller{
         public function renderWithTags($view, $data = null, $return = false) {
             if($this->beforeRender($view)){
                     $output=$this->renderPartial($view,$data,true);
+                    
                     if(($layoutFile=$this->getLayoutFile($this->layout))!==false)
                             $output=$this->renderFile($layoutFile,array('content'=>$output),true);
 
@@ -28,17 +29,18 @@ class NController extends Controller{
                     else
                             echo $output;
             }
-            
         }
+
+
         public function render($view, $data = null, $return = false) {
             if($this->beforeRender($view)){
                     $output=$this->renderPartial($view,$data,true);
                     if(($layoutFile=$this->getLayoutFile($this->layout))!==false)
                             $output=$this->renderFile($layoutFile,array('content'=>$output),true);
-
                     $this->afterRender($view,$output);
                     if(method_exists($this->action,"runTags"))
                         $output = $this->action->runTags($output);//我的修改
+                    
                     $output=$this->processOutput($output);
 
                     if($return)
@@ -46,7 +48,6 @@ class NController extends Controller{
                     else
                             echo $output;
             }
-            
         }
         protected function redirectUser($id){
                 if (isset($_POST['_save'])) {

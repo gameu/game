@@ -13,7 +13,6 @@
 		<div class="bottom-border">
 			<div class="new-game rBox">
 				<div class="tips aBox"></div>
-				
 				<div class="s-title">
 					<a href="#">
 						<h2 class="fl color_orange">全部游戏</h2>

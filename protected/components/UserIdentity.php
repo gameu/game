@@ -48,4 +48,31 @@ class UserIdentity extends CUserIdentity
                 }
 		
 	}
+//       $uAndp = array(
+//           'name'=>array(
+//                    'field'=>'user',
+//                    'value'=>$username,
+//                ),
+//            'pwd'=>array(
+//                    'field'=>'pwd',
+//                    'value'=>$password,
+//                ),
+//       );
+        public static function islogin($uAndp,$modelName){
+            $options = array(
+                'condition'=>'`'.$uAndp['name']['field'].'`="'.$uAndp['name']['value'].'"',
+                //'order'=>'`created` DESC',
+            );
+            $tmpdata = new CActiveDataProvider($modelName,array(
+                "criteria"=>$options
+            ));
+            $tmpdt = $tmpdata->getData();
+            if(empty($tmpdt)) return false;
+            foreach ($tmpdt as $tmpdt_each){
+               if($tmpdt_each[$uAndp['pwd']['field']] == $uAndp['pwd']['value'])
+                   return true;
+               else
+                   return false;
+            }
+        }
 }

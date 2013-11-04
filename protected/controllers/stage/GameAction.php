@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -17,8 +16,7 @@ class GameAction extends StageAction{
             'newgame',
             'recogame',
         ),'[]');
-        $this->controller->render('game');
-        
+       $this->controller->render('game');
     }
     
     public function getGameDataProvider($options){
@@ -36,6 +34,7 @@ class GameAction extends StageAction{
             ));
             $data = $dataProvider->getData();
             $html = '';
+            
             foreach($data as $d){
                 $logoPath = $dataProvider->model->getFilePath(null,'images')."/".$d['logo'];
                 $html .= Yii::t('nan',$m[0],array(

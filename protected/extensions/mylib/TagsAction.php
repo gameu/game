@@ -36,7 +36,8 @@ class TagsAction extends CAction{
 //      */
 //     public $useSidebar = true;
 
-     public function __construct($controller, $id) {
+    
+    public function __construct($controller, $id) { 
          parent::__construct($controller, $id);
          $this->setTags();
          $this->setCustomTags(array(
@@ -59,6 +60,7 @@ class TagsAction extends CAction{
          if($this->useScriptTag) $this->tags['nscript'] = '/\<n\:script>(?<name>[^<]+)\<\/n\:script>/';
          if($this->useCreateUrl) $this->tags["createUrl"] = '/\{\$createUrl\(([^}]+)\)\}/';
      }
+     
      /**
       * 自定义标签
       * @param array $array自定义标签数组

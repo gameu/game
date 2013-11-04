@@ -187,6 +187,7 @@ class Company extends NFileActiveRecord {
             'created' => '入库时间',
         );
     }
+    
     public function attributeAddLabels() {
         return array(
             'name' => 'requried',
